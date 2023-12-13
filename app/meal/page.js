@@ -2,7 +2,11 @@ import Link from "next/link";
 import React from "react";
 import classes from "./page.module.css";
 import MealGrid from "@/components/meals/MealGrid";
-const page = () => {
+
+import { getMeals } from "@/lib/meal";
+
+const page = async () => {
+     const meals = await getMeals();
      return (
           <>
                <header className={classes.header}>
